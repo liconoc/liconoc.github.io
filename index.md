@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: liconoc
 ---
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
