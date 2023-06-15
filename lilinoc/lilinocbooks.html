@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LiLiNOC Books - Lidia Contreras Ochando</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    header {
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    select {
+      margin-top: 10px;
+      padding: 5px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+	
+	footer img{
+    width: 100px;
+    height: 100px;
+	}
+
+  #country-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Centrado y oculto al iniciar */
+  main {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Artificial Art Collection / Colección Arte Artificial </h1>
+    <h2>Select a language/Selecciona un idioma:</h2>
+    <select id="language-select">
+      <option value="" selected>Language/Idioma</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+  </header>
+
+  <main>
+    <div id="country-selector">
+      <h2 id="country-text"></h2>
+      <select id="country-select"></select>
+      <button id="amazon-store-button"></button>
+    </div>
+  </main>
+
+  <footer>
+    <img src="logo.png" alt="Logo" />
+    <p>LiLiNOC Books - Lidia Contreras Ochando (2023)</p>
+  </footer>
+
+  <script>
+    $(document).ready(function() {
+
+      $('#language-select').on('change', updateCountrySelector);
+
+      function updateCountrySelector() {
+        /* Mostrar el main */
+        $('main').show();
+        const selectedLanguage = $(this).val();
+        const countryText = $('#country-text');
+        const countrySelect = $('#country-select');
+        const amazonStoreButton = $('#amazon-store-button');
+
+        if (selectedLanguage === 'en') {
+          countryText.text('Select a country:');
+          countrySelect.html(`
+           <option value="" selected>Country</option>
+            <option value="us">United States</option>
+            <option value="uk">United Kingdom</option>
+            <option value="de">Germany</option>
+            <option value="fr">France</option>
+            <option value="es">Spain</option>
+            <option value="it">Italy</option>
+            <option value="nl">Netherlands</option>
+            <option value="pl">Poland</option>
+            <option value="se">Sweden</option>
+            <option value="jp">Japan</option>            
+            <option value="ca">Canada</option>
+            <option value="au">Australia</option>
+
+          `);
+          amazonStoreButton.text('Go to the Amazon Store');
+        } else if (selectedLanguage === 'es') {
+          countryText.text('Selecciona un país:');
+          countrySelect.html(`
+          <option value="" selected>País</option>
+          <option value="us">EEUU</option>
+            <option value="uk">Reino Unido</option>
+            <option value="de">Alemania</option>
+            <option value="fr">Francia</option>
+            <option value="es">España</option>
+            <option value="it">Italia</option>
+            <option value="nl">Países Bajos</option>
+            <option value="pl">Polonia</option>
+            <option value="se">Suecia</option>
+            <option value="jp">Japón</option>            
+            <option value="ca">Canadá</option>
+            <option value="au">Australia</option>
+          `);
+          amazonStoreButton.text('Ir a la tienda de Amazon');
+        }
+      }
+
+      $('#country-select').on('change', updateAmazonStoreButton);
+
+      function updateAmazonStoreButton() {
+        const selectedLanguage = $('#language-select').val();
+        const selectedCountry = $(this).val();
+        const amazonStoreButton = $('#amazon-store-button');
+
+        if (selectedLanguage === 'en') {
+          switch(selectedCountry) {
+            case 'us':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.com/dp/B0C6KWVZWW?binding=paperback&ref_=ast_author_bsi")');
+              break;
+            case 'uk':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.co.uk/dp/B0C6KWVZWW?binding=paperback&ref=dbs_dp_rwt_sb_pc_tpbk")');
+              break;
+            case 'de':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.de/-/en/dp/B0C6KWVZWW?binding=paperback&ref=dbs_dp_rwt_sb_pc_tpbk")');
+              break;
+            case 'fr':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.fr/dp/B0C6KWVZWW?binding=paperback&ref=dbs_dp_rwt_sb_pc_tukn")');
+              break;
+            case 'es':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.es/dp/B0C6KWVZWW?binding=paperback&ref=dbs_dp_rwt_sb_pc_tukn")');
+              break;
+            case 'it':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.it/dp/B0C6KWVZWW?binding=paperback&ref=dbs_dp_rwt_sb_pc_tukn")');
+              break;
+            case 'nl':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.nl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando&page=2&qid=1686811399&ref=sr_pg_2")');
+              break;
+            case 'pl':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.pl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando&ref=dp_byline_sr_book_1")');
+              break;
+            case 'se':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.se/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando&ref=dp_byline_sr_book_1")');
+              break;
+            case 'jp':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.co.jp/-/en/Lidia-Contreras-Ochando/e/B0BR7TXJNW/ref=aufs_dp_mata_dsk")');
+              break;
+            case 'ca':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.ca/dp/B0C6KWVZWW?binding=paperback&ref=dbs_dp_rwt_sb_pc_tpbk")');
+              break;
+            case 'au':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.com.au/dp/B0C6KWVZWW?binding=paperback&ref=dbs_dp_rwt_sb_pc_tpbk")');
+              break;
+          }
+        } else if (selectedLanguage === 'es') {
+          switch(selectedCountry) {
+            case 'us':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.com/-/es/dp/B0C6KSFHX1?binding=paperback&ref=dbs_dp_rwt_sb_pc_tukn")');
+              break;
+            case 'uk':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.co.uk/dp/B0C6KSFHX1?binding=paperback&ref=dbs_dp_rwt_sb_pc_tpbk")');
+              break;
+            case 'de':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.de/-/en/dp/B0C6KSFHX1?binding=paperback&ref=dbs_dp_rwt_sb_pc_tpbk")');
+              break;
+            case 'fr':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.fr/dp/B0C6KSFHX1?binding=paperback&ref=dbs_dp_rwt_sb_pc_tukn")');
+              break;
+            case 'es':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.es/dp/B0C6KSFHX1?binding=paperback&ref=dbs_dp_rwt_sb_pc_tukn")');
+              break;
+            case 'it':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.it/dp/B0C6KSFHX1?binding=paperback&ref=dbs_dp_rwt_sb_pc_tukn")');
+              break;
+            case 'nl':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.nl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando&page=2&qid=1686811399&ref=sr_pg_2")');
+              break;
+            case 'pl':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.pl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando&ref=dp_byline_sr_book_1")');
+              break;
+            case 'se':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.se/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando&ref=dp_byline_sr_book_1")');
+              break;
+            case 'jp':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.co.jp/-/en/Lidia-Contreras-Ochando/e/B0BR7TXJNW/ref=aufs_dp_mata_dsk")');
+              break;
+            case 'ca':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.ca/dp/B0C6KSFHX1?binding=paperback&ref=dbs_dp_rwt_sb_pc_tpbk")');
+              break;
+            case 'au':
+              amazonStoreButton.attr('onclick', 'window.open("https://www.amazon.com.au/dp/B0C6KSFHX1?binding=paperback&ref=dbs_dp_rwt_sb_pc_tpbk")');
+              break;
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
