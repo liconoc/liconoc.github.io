@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LiLiNOC Books - Lidia Contreras Ochando</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.5.0/jquery.mobile-1.5.0.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.5.0/jquery.mobile-1.5.0.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    header {
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+    }
+    
+
+    
+    select {
+      margin-top: 10px;
+      padding: 5px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+	
+	footer img, header img{
+    width: 100px;
+    height: 100px;
+	}
+
+  #country-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Centrado y oculto al iniciar */
+  main {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .titles {
+  text-align: center;
+}
+
+.titles h3 {
+  display: inline-block;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.image-container {
+  margin-bottom: 20px;
+}
+
+.image-container h3 {
+  margin-top: 0;
+}
+
+.image-container img {
+  max-width: 550px;
+  height: auto;
+}
+
+.hide {
+  display: none;
+}
+
+.collection-text {
+  text-align: center;
+}
+
+
+  </style>
+  
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQKQCNF5XC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DQKQCNF5XC');
+</script>
+
+
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo" />
+    <h1>LiLiNOC BOOKS </h1>
+    <p>© Lidia Contreras Ochando (2023)</p>
+    <h2>Select a language/Selecciona un idioma:</h2>
+    <select id="language-select">
+      <option value="" selected>Language/Idioma</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+  </header>
+
+  <main>
+    <div id="country-selector">
+      <h2 id="country-text"></h2>
+      <select id="country-select"></select>      
+    </div>
+
+    <div id="collection-selector">
+
+
+      <div class="hide" id="en-us">
+        <h2 class="collection-text" id="collection-text-en-us">Select a collection</h2>     
+          
+          <div class="images" id="collection-images-en-us">
+            <div class="image-container">
+              <a href="https://www.amazon.com/dp/B0C6KWVZWW"><h3>Artificial Art</h3>
+              <img src="images/aa-en.png" alt="Artificial Art"></a>
+            </div>
+            <div class="image-container">
+              <a href="https://www.amazon.com/dp/B0C8G48HXL"><h3>Reverse Colouring</h3>
+              <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+            </div>
+            <div class="image-container">
+              <a href="https://www.amazon.com/dp/B0C96TC66N"><h3>Chromatic Wisdom</h3>
+              <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+            </div>
+          </div>     
+      </div>
+        
+      
+     
+      <div class="hide" id="en-uk">
+      <h2 class="collection-text " id="collection-text-en-uk">Select a collection</h2>    
+      
+      <div class="images " id="collection-images-en-uk">
+        <div class="image-container">
+          <a href="https://www.amazon.co.uk/dp/B0C6KWVZWW"><h3>Artificial Art</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.co.uk/dp/B0C8G48HXL"><h3>Reverse Colouring</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.co.uk/gp/product/B0C91NT99P"><h3>Chromatic Wisdom</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hide" id="en-de">
+      <h2 class="collection-text " id="collection-text-en-de">Select a collection</h2>
+
+      <div class="images " id="collection-images-en-de">
+        <div class="image-container">
+          <a href="https://www.amazon.de/-/en/dp/B0C6KWVZWW"><h3>Artificial Art</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.de/-/en/dp/B0C8G48HXL"><h3>Reverse Colouring</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.de/-/en/dp/B0C96TC66N"><h3>Chromatic Wisdom</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hide" id="en-fr">
+      <h2 class="collection-text " id="collection-text-en-fr">Select a collection</h2>    
+      
+      <div class="images" id="collection-images-en-fr">
+        <div class="image-container">
+          <a href="https://www.amazon.fr/dp/B0C6KWVZWW"><h3>Artificial Art</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.fr/dp/B0C8G48HXL"><h3>Reverse Colouring</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.fr/dp/B0C96TC66N"><h3>Chromatic Wisdom</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hide" id="en-es">
+      <h2 class="collection-text " id="collection-text-en-es">Select a collection</h2>
+      
+      <div class="images " id="collection-images-en-es">
+        <div class="image-container">
+          <a href="https://www.amazon.es/dp/B0C6KWVZWW"><h3>Artificial Art</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.es/dp/B0C8G48HXL"><h3>Reverse Colouring</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.es/dp/B0C96TC66N"><h3>Chromatic Wisdom</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hide" id="en-it">
+      <h2 class="collection-text " id="collection-text-en-it">Select a collection</h2>
+      
+      <div class="images " id="collection-images-en-it">
+        <div class="image-container">
+          <a href="https://www.amazon.it/dp/B0C6KWVZWW"><h3>Artificial Art</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.it/dp/B0C8G48HXL"><h3>Reverse Colouring</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.it/dp/B0C96TC66N"><h3>Chromatic Wisdom</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hide" id="en-nl">
+      <h2 class="collection-text " id="collection-text-en-nl">Select a collection</h2>
+      
+      <div class="images " id="collection-images-en-nl">
+        <div class="image-container">
+          <a href="https://www.amazon.nl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Artificial Art</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.nl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Reverse Colouring</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.nl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Chromatic Wisdom</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div>
+    </div>
+       
+    <div class="hide" id="en-pl">
+      <h2 class="collection-text " id="collection-text-en-pl">Select a collection</h2>
+      
+      <div class="images " id="collection-images-en-pl">
+        <div class="image-container">
+          <a href="https://www.amazon.pl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Artificial Art</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.pl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Reverse Colouring</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.pl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Chromatic Wisdom</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div> 
+
+    <div class="hide" id="en-se">
+      <h2 class="collection-text " id="collection-text-en-se">Select a collection</h2>
+
+       <div class="images " id="collection-images-en-se">
+        <div class="image-container">
+          <a href="https://www.amazon.se/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Artificial Art</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.se/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Reverse Colouring</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.se/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Chromatic Wisdom</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div>
+    </div>  
+
+    <div class="hide" id="en-jp">
+      <h2 class="collection-text " id="collection-text-en-jp">Select a collection</h2>
+      
+      <div class="images " id="collection-images-en-jp">
+        <div class="image-container">
+          <a href="https://www.amazon.co.jp/-/en/Lidia-Contreras-Ochando/e/B0BR7TXJNW"><h3>Artificial Art</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.co.jp/-/en/Lidia-Contreras-Ochando/e/B0BR7TXJNW"><h3>Reverse Colouring</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.co.jp/-/en/Lidia-Contreras-Ochando/e/B0BR7TXJNW"><h3>Chromatic Wisdom</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div>
+
+    <div class="hide" id="en-ca">
+      <h2 class="collection-text " id="collection-text-en-ca">Select a collection</h2>
+
+      <div class="images " id="collection-images-en-ca">
+        <div class="image-container">
+          <a href="https://www.amazon.ca/dp/B0C6KWVZWW?binding=paperback"><h3>Artificial Art</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.ca/dp/B0C8G48HXL?binding=paperback"><h3>Reverse Colouring</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.ca/dp/B0C96TC66N?binding=paperback"><h3>Chromatic Wisdom</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div>
+
+    <div class="hide" id="en-au">
+      <h2 class="collection-text " id="collection-text-en-au">Select a collection</h2>
+      
+      <div class="images " id="collection-images-en-au">
+        <div class="image-container">
+          <a href="https://www.amazon.com.au/dp/B0C6KWVZWW"><h3>Artificial Art</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.com.au/dp/B0C96TC66N"><h3>Chromatic Wisdom</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div>
+
+    <div class="hide" id="es-us">
+      <h2 class="collection-text " id="collection-text-es-us">Selecciona una colección</h2>
+      
+      <div class="images " id="collection-images-es-us">
+        <div class="image-container">
+          <a href="https://www.amazon.com/-/es/dp/B0C6KSFHX1"><h3>Arte Artificial</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.com/-/es/dp/B0C8FTPRT8"><h3>Coloración Inversa</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.com/-/es/dp/B0C96XWZ3R"><h3>Sabiduría Cromática</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div>
+
+    <div class="hide" id="es-uk">
+      <h2 class="collection-text " id="collection-text-es-uk">Selecciona una colección</h2>
+      
+      <div class="images " id="collection-images-es-uk">
+        <div class="image-container">
+          <a href="https://www.amazon.co.uk/dp/B0C6KSFHX1"><h3>Arte Artificial</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.co.uk/dp/B0C8FTPRT8"><h3>Coloración Inversa</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.co.uk/dp/B0C96XWZ3R"><h3>Sabiduría Cromática</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div>
+      
+    <div class="hide" id="es-de">
+      <h2 class="collection-text " id="collection-text-es-de">Selecciona una colección</h2>
+      
+      <div class="images " id="collection-images-es-de">
+        <div class="image-container">
+          <a href="https://www.amazon.de/-/en/dp/B0C6KSFHX1"><h3>Arte Artificial</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.de/-/en/dp/B0C8FTPRT8"><h3>Coloración Inversa</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.de/-/en/dp/B0C96XWZ3R"><h3>Sabiduría Cromática</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div> 
+
+    <div class="hide" id="es-fr">
+      <h2 class="collection-text " id="collection-text-es-fr">Selecciona una colección</h2>
+      
+      <div class="images " id="collection-images-es-fr">
+        <div class="image-container">
+          <a href="https://www.amazon.fr/dp/B0C6KSFHX1"><h3>Arte Artificial</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.fr/dp/B0C8FTPRT8"><h3>Coloración Inversa</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.fr/dp/B0C96XWZ3R"><h3>Sabiduría Cromática</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div>
+
+    <div class="hide" id="es-es">
+      <h2 class="collection-text " id="collection-text-es-es">Selecciona una colección</h2>
+     
+      <div class="images " id="collection-images-es-es">
+        <div class="image-container">
+          <a href="https://www.amazon.es/dp/B0C6KSFHX1"><h3>Arte Artificial</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.es/dp/B0C8FTPRT8"><h3>Coloración Inversa</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.es/dp/B0C96XWZ3R"><h3>Sabiduría Cromática</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+
+    </div>
+
+    <div class="hide" id="es-it">
+      <h2 class="collection-text " id="collection-text-es-it">Selecciona una colección</h2>
+      
+      <div class="images " id="collection-images-es-it">
+        <div class="image-container">
+          <a href="https://www.amazon.it/dp/B0C6KSFHX1"><h3>Arte Artificial</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.it/dp/B0C8FTPRT8"><h3>Coloración Inversa</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.it/dp/B0C96XWZ3R"><h3>Sabiduría Cromática</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div>
+
+    <div class="hide" id="es-nl">
+      <h2 class="collection-text " id="collection-text-es-nl">Selecciona una colección</h2>
+
+      <div class="images " id="collection-images-es-nl">
+        <div class="image-container">
+          <a href="https://www.amazon.nl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Arte Artificial</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.nl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Coloración Inversa</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.nl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Sabiduría Cromática</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div> 
+
+    <div class="hide" id="es-pl">
+      <h2 class="collection-text " id="collection-text-es-pl">Selecciona una colección</h2>
+      
+      <div class="images " id="collection-images-es-pl">
+        <div class="image-container">
+          <a href="https://www.amazon.pl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Arte Artificial</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.pl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Coloración Inversa</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.pl/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Sabiduría Cromática</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div>
+
+    <div class="hide" id="es-se">
+      <h2 class="collection-text " id="collection-text-es-se">Selecciona una colección</h2>
+     
+      <div class="images " id="collection-images-es-se">
+        <div class="image-container">
+          <a href="https://www.amazon.se/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Arte Artificial</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.se/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Coloración Inversa</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.se/s?i=stripbooks&rh=p_27%3ALidia+Contreras+Ochando"><h3>Sabiduría Cromática</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div>
+
+    <div class="hide" id="es-jp">
+      <h2 class="collection-text " id="collection-text-es-jp">Selecciona una colección</h2>
+      
+      <div class="images " id="collection-images-es-jp">
+        <div class="images " id="collection-images-es-se">
+          <div class="image-container">
+            <a href="https://www.amazon.co.jp/-/en/Lidia-Contreras-Ochando/e/B0BR7TXJNW"><h3>Arte Artificial</h3>
+            <img src="images/aa-en.png" alt="Artificial Art"></a>
+          </div>
+          <div class="image-container">
+            <a href="https://www.amazon.co.jp/-/en/Lidia-Contreras-Ochando/e/B0BR7TXJNW"><h3>Coloración Inversa</h3>
+            <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+          </div>
+          <div class="image-container">
+            <a href="https://www.amazon.co.jp/-/en/Lidia-Contreras-Ochando/e/B0BR7TXJNW"><h3>Sabiduría Cromática</h3>
+            <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+          </div>
+      </div> 
+    </div>
+
+    <div class="hide" id="es-ca">
+      <h2 class="collection-text " id="collection-text-es-ca">Selecciona una colección</h2>
+
+      <div class="images " id="collection-images-es-ca">
+        <div class="image-container">
+          <a href="https://www.amazon.ca/dp/B0C6KSFHX1"><h3>Arte Artificial</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.ca/dp/B0C8FTPRT8"><h3>Coloración Inversa</h3>
+          <img src="images/rc-en.png" alt="Reverse Colouring"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.ca/dp/B0C96XWZ3R"><h3>Sabiduría Cromática</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div>
+
+    <div class="hide" id="es-au">
+      <h2 class="collection-text " id="collection-text-es-au">Selecciona una colección</h2>
+      
+      <div class="images " id="collection-images-es-au">
+        <div class="image-container">
+          <a href="https://www.amazon.com.au/dp/B0C6KSFHX1"><h3>Arte Artificial</h3>
+          <img src="images/aa-en.png" alt="Artificial Art"></a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.amazon.com.au/dp/B0C96XWZ3R"><h3>Sabiduría Cromática</h3>
+          <img src="images/cw-en.png" alt="Chromatic Wisdom"></a>
+        </div>
+      </div> 
+    </div>     
+    
+    </div>
+  </main>
+
+
+
+  <script>
+    $(document).ready(function() {
+
+      $('#language-select').on('change', updateCountrySelector);
+
+      function updateCountrySelector() {
+        /* Mostrar el main */
+        $('main').show();
+        const selectedLanguage = $(this).val();
+        const countryText = $('#country-text');
+        const countrySelect = $('#country-select');
+        const amazonStoreButton = $('#amazon-store-button');
+
+        if (selectedLanguage === 'en') {
+          countryText.text('Select a country:');
+          countrySelect.html(`
+           <option value="" selected>Country</option>
+            <option value="us">United States</option>
+            <option value="uk">United Kingdom</option>
+            <option value="de">Germany</option>
+            <option value="fr">France</option>
+            <option value="es">Spain</option>
+            <option value="it">Italy</option>
+            <option value="nl">Netherlands</option>
+            <option value="pl">Poland</option>
+            <option value="se">Sweden</option>
+            <option value="jp">Japan</option>            
+            <option value="ca">Canada</option>
+            <option value="au">Australia</option>
+
+          `);
+          amazonStoreButton.text('Go to the Amazon Store');
+        } else if (selectedLanguage === 'es') {
+          countryText.text('Selecciona un país:');
+          countrySelect.html(`
+          <option value="" selected>País</option>
+          <option value="us">EEUU</option>
+            <option value="uk">Reino Unido</option>
+            <option value="de">Alemania</option>
+            <option value="fr">Francia</option>
+            <option value="es">España</option>
+            <option value="it">Italia</option>
+            <option value="nl">Países Bajos</option>
+            <option value="pl">Polonia</option>
+            <option value="se">Suecia</option>
+            <option value="jp">Japón</option>            
+            <option value="ca">Canadá</option>
+            <option value="au">Australia</option>
+          `);
+          amazonStoreButton.text('Ir a la tienda de Amazon');
+        }
+      }
+
+      $('#country-select').on('change', updateAmazonStoreButton);
+
+      function updateAmazonStoreButton() {
+        const selectedLanguage = $('#language-select').val();
+        const selectedCountry = $(this).val();
+
+        $("#collection-selector").show();
+    
+        if (selectedLanguage === 'en') {
+          switch(selectedCountry) {
+            case 'us':
+              $('#en-us').removeClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+              break;
+            case 'uk':
+              $('#en-us').addClass('hide');
+              $('#en-uk').removeClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+              break;
+            case 'de':
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').removeClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+              break;
+            case 'fr':
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').removeClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+              break;
+            case 'es':
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').removeClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+              break;
+            case 'it':
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').removeClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+              break;
+            case 'nl':
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').removeClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+              break;
+            case 'pl':
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').removeClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+              break;
+            case 'se':
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').removeClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+              break;
+            case 'jp':
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').removeClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+              break;
+            case 'ca':
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').removeClass('hide');
+              $('#en-au').addClass('hide');
+
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+              break;
+            case 'au':
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').removeClass('hide');
+
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+              break;
+
+          }
+        } else if (selectedLanguage === 'es') {
+          switch(selectedCountry) {
+           case 'us':
+           $('#es-us').removeClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+              break;
+            case 'uk':
+              $('#es-us').addClass('hide');
+              $('#es-uk').removeClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+              break;
+            case 'de':
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').removeClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+              break;
+            case 'fr':
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').removeClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+              break;
+            case 'es':
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').removeClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+              break;
+            case 'it':
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').removeClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+              break;
+            case 'nl':
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').removeClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+              break;
+            case 'pl':
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').removeClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+              break;
+            case 'se':
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').removeClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+              break;
+            case 'jp':
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').removeClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').addClass('hide');
+
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+              break;
+            case 'ca':
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').removeClass('hide');
+              $('#es-au').addClass('hide');
+
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+              break;
+            case 'au':
+              $('#es-us').addClass('hide');
+              $('#es-uk').addClass('hide');
+              $('#es-de').addClass('hide');
+              $('#es-fr').addClass('hide');
+              $('#es-es').addClass('hide');
+              $('#es-it').addClass('hide');
+              $('#es-nl').addClass('hide');
+              $('#es-pl').addClass('hide');
+              $('#es-se').addClass('hide');
+              $('#es-jp').addClass('hide');
+              $('#es-ca').addClass('hide');
+              $('#es-au').removeClass('hide');
+
+              $('#en-us').addClass('hide');
+              $('#en-uk').addClass('hide');
+              $('#en-de').addClass('hide');
+              $('#en-fr').addClass('hide');
+              $('#en-es').addClass('hide');
+              $('#en-it').addClass('hide');
+              $('#en-nl').addClass('hide');
+              $('#en-pl').addClass('hide');
+              $('#en-se').addClass('hide');
+              $('#en-jp').addClass('hide');
+              $('#en-ca').addClass('hide');
+              $('#en-au').addClass('hide');
+              break;
+
+            }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
