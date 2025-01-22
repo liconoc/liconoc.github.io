@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica inglés conmigo hohoho</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #d32f2f;
+            font-family: 'Arial', sans-serif;
+            margin-top: 20px;
+        }
+        #heygen-streaming-embed {
+            position: fixed;
+            left: 50%;
+            bottom: 50%;
+            transform: translate(-50%, 50%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Practica inglés conmigo hohoho</h1>
+    <!-- ...existing code... -->
+    <script>
+        !function(window){
+            const host="https://labs.heygen.com",
+            url=host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJTYW50YV9GaXJlcGxhY2VfRnJvbnRfcHVi%0D%0AbGljIiwicHJldmlld0ltZyI6Imh0dHBzOi8vZmlsZXMyLmhleWdlbi5haS9hdmF0YXIvdjMvM2I0%0D%0AZTQ2NGJmMTVmNDE5NGIwODJiZTBlNjMxMzU0YzZfNDY4NjAvcHJldmlld190YXJnZXQud2VicCIs%0D%0AIm5lZWRSZW1vdmVCYWNrZ3JvdW5kIjpmYWxzZSwia25vd2xlZGdlQmFzZUlkIjoiMTdhMzMwYTAw%0D%0AODZiNGM3Mzg3ZTVlNGZjZDkxZDY0MTMiLCJ1c2VybmFtZSI6ImRjNThiMjVlMjQ5MzQ1MjA5NjMz%0D%0AYTVhZDU5M2Q1ZjhlIn0%3D&inIFrame=1",
+            clientWidth=document.body.clientWidth,
+            wrapDiv=document.createElement("div");
+            wrapDiv.id="heygen-streaming-embed";
+            const container=document.createElement("div");
+            container.id="heygen-streaming-container";
+            const stylesheet=document.createElement("style");
+            stylesheet.innerHTML=`\n  #heygen-streaming-embed {\n    z-index: 9999;\n    position: fixed;\n    left: 50%;\n    bottom: 50%;\n    transform: translate(-50%, 50%);\n    width: 200px;\n    height: 200px;\n    border-radius: 50%;\n    border: 2px solid #fff;\n    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);\n    transition: all linear 0.1s;\n    overflow: hidden;\n\n    opacity: 0;\n    visibility: hidden;\n  }\n  #heygen-streaming-embed.show {\n    opacity: 1;\n    visibility: visible;\n  }\n  #heygen-streaming-embed.expand {\n    ${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"}\n    border: 0;\n    border-radius: 8px;\n  }\n  #heygen-streaming-container {\n    width: 100%;\n    height: 100%;\n  }\n  #heygen-streaming-container iframe {\n    width: 100%;\n    height: 100%;\n    border: 0;\n  }\n  `;
+            const iframe=document.createElement("iframe");
+            iframe.allowFullscreen=!1,
+            iframe.title="Streaming Embed",
+            iframe.role="dialog",
+            iframe.allow="microphone",
+            iframe.src=url;
+            let visible=!1,initial=!1;
+            window.addEventListener("message",(e=>{
+                e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),
+            container.appendChild(iframe),
+            wrapDiv.appendChild(stylesheet),
+            wrapDiv.appendChild(container),
+            document.body.appendChild(wrapDiv)
+        }(globalThis);
+    </script>
+</body>
+</html>
