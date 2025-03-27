@@ -1,0 +1,109 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Steganografía en Línea</title>
+  <link rel="stylesheet" href="esteganografia/bootstrap.min.css">
+</head>
+<body cz-shortcut-listen="true">
+  <div class="container">
+    <div class="page-header">
+      <h1>Steganografía en Línea</h1>
+    </div>
+
+    <ul class="nav nav-tabs" id="tabs" data-tabs="tabs">
+      <li role="presentation" class="active"> <a href="#encode" data-toggle="tab">Codificar</a></li>
+      <li role="presentation"> <a href="#decode" data-toggle="tab">Decodificar</a></li>
+    </ul>
+
+    <div id="my-tab-content" class="tab-content">
+      <div class="tab-pane active" id="encode">
+        <div>
+          <h2>Codificar mensaje</h2>
+          <p class="alert alert-info">
+            Para codificar un mensaje en una imagen, elige la imagen que deseas usar, introduce tu texto y pulsa el botón <strong>Codificar</strong>. <br>
+            Guarda la última imagen, contendrá tu mensaje oculto. <br>
+            Recuerda, cuanto más texto quieras ocultar, más grande debe ser la imagen. Si eliges una imagen demasiado pequeña para contener tu mensaje, se te informará.<br><br>
+            Ni la imagen ni el mensaje que ocultes serán transmitidos por la web en ningún momento, toda la magia sucede dentro de tu navegador.
+          </p>
+          <form class="form">
+            <div class="form-group">
+              <input class="form-control" type="file" name="baseFile" onchange="previewEncodeImage()">
+            </div>
+
+            <div class="form-group">
+              <textarea class="form-control message" rows="3" placeholder="Introduce tu mensaje aquí"></textarea>
+            </div>
+
+            <div class="form-group">
+              <button class="encode btn btn-default pull-right" onclick="encodeMessage()">Codificar</button>
+            </div>
+          </form>
+          <div class="clearfix"></div>
+        </div>
+
+        <div class="error" style="display: none;"></div>
+        <div class="binary" style="display: none;">
+          <h3>Representación binaria de tu mensaje</h3>
+          <textarea class="form-control message" style="word-wrap:break-word;">          </textarea>
+        </div>
+        <div class="images" style="display: none;">
+          <div class="original" style="display: none;">
+            <h3>Original</h3>
+            <canvas></canvas>
+          </div>
+          <div class="nulled" style="display: none;">
+            <h3>Normalizada</h3>
+            <canvas></canvas>
+          </div>
+          <div class="message" style="display: none;">
+            <h3>Mensaje oculto en la imagen (clic derecho <span class="glyphicon glyphicon-arrow-right"></span> guardar como)</h3>
+            <canvas></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="decode">
+        <div>
+          <h2>Decodificar imagen</h2>
+          <p class="alert alert-info">
+            Para decodificar un mensaje oculto en una imagen, simplemente elige una imagen y pulsa el botón <strong>Decodificar</strong>.<br><br>
+            Ni la imagen ni el mensaje que ha sido oculto serán transmitidos por la web en ningún momento, toda la magia sucede dentro de tu navegador.
+          </p>
+          <form class="form">
+            <div class="form-group">
+              <input class="form-control" type="file" name="decodeFile" onchange="previewDecodeImage()">
+            </div>
+            <div class="form-group">
+              <button class="decode btn btn-default pull-right" onclick="decodeMessage()">Decodificar</button>
+            </div>
+          </form>
+          <div class="clearfix"></div>
+        </div>
+        <div class="binary-decode" style="display: none;">
+          <h3>Mensaje oculto</h3>
+          <textarea class="form-control message" style="word-wrap:break-word;">          </textarea>
+        </div>
+        <div class="decode" style="display: none;">
+          <h3>Entrada</h3>
+          <canvas></canvas>
+        </div>
+      </div>
+
+    </div>
+
+    <footer style="text-align: center; margin-top: 20px; margin-bottom: 10px;">
+      © 2025 por liconoc</a>
+    </footer>
+  </div>
+
+  <style>
+    canvas {
+      max-width: 100%;
+    }
+  </style>
+
+  <script src="esteganografia/jquery.min.js"></script>
+  <script src="esteganografia/bootstrap.min.js"></script>
+  <script type="text/JavaScript" src="esteganografia/script.js"></script>
+
+
+</body></html>
